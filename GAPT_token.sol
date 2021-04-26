@@ -1202,7 +1202,7 @@ contract GAPT_test is Context, IERC20, Ownable {
         uint256 actualRFee = rFee.div(2); //2.5%
         uint256 singelPercent = rFee.div(5); //1%
         uint256 oneTenth = singelPercent.div(10);
-        actualRFee.add(singelPercent).sub(oneTenth); //now 3.4%
+        actualRFee = actualRFee.add(singelPercent).sub(oneTenth); //now 3.4%
         
         _rTotal = _rTotal.sub(actualRFee); //reflects 3.4%
         _tFeeTotal = _tFeeTotal.add(tFee); //adds the 10% total fees of the TX to the tracker.
